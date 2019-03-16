@@ -1,0 +1,78 @@
+To create KeyPair
+API:- localhost:3001/udgt/api/createKeyPair
+Request:-
+{
+	"emailId":"kiranthecoder@gmail.com"
+}
+Response:-
+{
+    "status": 200,
+    "message": "Wallet created",
+    "data": {
+        "emailId": "kiranthecoder@gmail.com",
+        "publicKey": "GCZNLKVOE6ZNCBZ4BDW6WMX3OTNLR7SBVKRIQYBLIKTTQ6LBMYA2LNK5"
+    }
+}
+
+
+To get Balance:-
+
+API:-
+localhost:3001/udgt/api/getBalances
+
+Request:-
+{
+	"publicKey":"GAOQN3HOSGW6WCTZUPSQX4IN3HU25OYLF6XOYUNUD75T52K3KHWWLFSB"
+}
+
+Response:-
+{
+    "status": 200,
+    "message": "success",
+    "data": [
+        {
+            "balance": "9989.9999900",
+            "buying_liabilities": "0.0000000",
+            "selling_liabilities": "0.0000000",
+            "asset_type": "native"
+        }
+    ]
+}
+
+
+To build transaction:-
+
+API:-
+localhost:3001/udgt/api/buildTransaction
+
+Request:-
+{
+	"emailId":"sowjanya.g@stepv.io",
+	"destinationId":"GDXWY3Y3MP3JHIC27LOS2SPDKVEVLZWFLU654PQFBWE2F56XEXLKI2AA",
+	"amount":"10"
+}
+
+Response:
+{
+    "status": 200,
+    "message": "Transaction completed",
+    "data": {
+        "_id": "5c83dcbc26ea7c4138e5b666",
+        "sourceId": "GDXWY3Y3MP3JHIC27LOS2SPDKVEVLZWFLU654PQFBWE2F56XEXLKI2AA",
+        "destinationId": "GDXWY3Y3MP3JHIC27LOS2SPDKVEVLZWFLU654PQFBWE2F56XEXLKI2AA",
+        "amount": "10",
+        "transactionResult": {
+            "_links": {
+                "transaction": {
+                    "href": "https://horizon-testnet.stellar.org/transactions/be99e22bbe185a2ae9bd8024b9afe59f478317e14768391ea04ea7751b54d5cf"
+                }
+            },
+            "hash": "be99e22bbe185a2ae9bd8024b9afe59f478317e14768391ea04ea7751b54d5cf",
+            "ledger": 172328,
+            "envelope_xdr": "AAAAAO9sbxtj9pOgWvrdLUnjVUlV5sVdPd4+BQ2JovfXJdakAAAAZAACl38AAAAFAAAAAQAAAAAAAAAAAAAAAFyD4KIAAAABAAAAEFRlc3QgVHJhbnNhY3Rpb24AAAABAAAAAAAAAAEAAAAA72xvG2P2k6Ba+t0tSeNVSVXmxV093j4FDYmi99cl1qQAAAAAAAAAAAX14QAAAAAAAAAAAdcl1qQAAABAn9TbEyNzQxdWvQn4d0gdFyN9e9OxWdlBaejoAYjjcZ8il4YIY3ylMnVJs7AKFnzkTIlalOiAYdeVcdF8YYpfCw==",
+            "result_xdr": "AAAAAAAAAGQAAAAAAAAAAQAAAAAAAAABAAAAAAAAAAA=",
+            "result_meta_xdr": "AAAAAQAAAAIAAAADAAKhKAAAAAAAAAAA72xvG2P2k6Ba+t0tSeNVSVXmxV093j4FDYmi99cl1qQAAAAXTmzHDAACl38AAAAEAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAABAAKhKAAAAAAAAAAA72xvG2P2k6Ba+t0tSeNVSVXmxV093j4FDYmi99cl1qQAAAAXTmzHDAACl38AAAAFAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=="
+        },
+        "__v": 0
+    }
+}
